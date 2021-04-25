@@ -11,7 +11,8 @@ const sass = require("gulp-sass"),
       notify = require("gulp-notify");
       imagemin = require("gulp-imagemin"),
       pngquant = require("imagemin-pngquant"),
-      mozjpeg = require("imagemin-mozjpeg");
+      mozjpeg = require("imagemin-mozjpeg"),
+      babel = require("gulp-babel"); 
 
 //読み込むパスと出力するパスを指定
 const srcPath = {
@@ -100,8 +101,25 @@ const compileEJS = () =>
   )
   .pipe(ejs())
   .pipe(rename({ extname: '.html' }))
-  .pipe(dest(srcPath.html.dist) )
+  .pipe(dest(srcPath.html.dist))
   .pipe(browserSync.reload({ stream: true }));
+
+/**
+ * JSのトランスパイル
+ */
+const compileJS = () => {
+  return (
+    src(srcPath.js.src, { sourcemaps: true })
+      .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+      .pipe(
+        babel({
+          presets: ["@babel/env"]
+        })
+      )
+      .pipe(dest(srcPath.js.dist))
+      .pipe(browserSync.reload({ stream: true }))
+  );
+};
 
 /**
  * 監視タスク
@@ -110,6 +128,7 @@ const compileEJS = () =>
 const watchFiles = () => {
   watch(srcPath.css.src,compileSass);
   watch(srcPath.html.src,compileEJS);
+  watch(srcPath.js.src, compileJS);
   watch(srcPath.images.src, compileImg);
 }
 

@@ -1,7 +1,8 @@
 # ボイラーテンプレート
 scssとejsを使える開発環境のボイラーテンプレート。
-ホットリロード対応。
-画像圧縮対応。
+- ホットリロード対応
+- 画像圧縮対応
+- JSのトランスパイル対応
 
 ## 今回やったこと
 - package.json生成（`npm init -y`）
@@ -10,19 +11,34 @@ scssとejsを使える開発環境のボイラーテンプレート。
 
 ## 使用パッケージ
 ```
+// scssを使う
+npm i -D gulp-sass
 // @importをまとめる
 npm i -D gulp-sass-glob
+// Autoprefix
+npm i -D autoprefixer
+
+// EJSを使う
+npm i -D gulp-ejs
 // コンパイル後のEJSの拡張子を任意のものに変更する
 npm i -D gulp-rename
+
+// JavaScriptのトランスパイル用
+npm i -D gulp-babel @babel/core @babel/preset-env
+
+// 画像圧縮
+npm i -D gulp-imagemin imagemin-mozjpeg imagemin-pngquant
+
 // ブラウザのホットリロード
 npm i -D browser-sync
+
 // エラーによる強制終了防止
 npm i -D gulp-plumber
 // エラー時にデスクトップ通知
 npm i -D gulp-notify
 ```
 
-## めも
+## メモ
 - autoprefixerを使用する時は、package.jsonにbrowserlistの記入が必要
 - gulp-ejsはあるバージョンからコンパイル後の拡張子が変換されなくなったのでgulp-renameと併用する
 - エラー時に強制終了しないために、plumberを導入。notifyのデスクトップ通知でエラー検知しやすくなる
