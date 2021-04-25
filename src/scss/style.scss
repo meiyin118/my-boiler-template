@@ -1,0 +1,21 @@
+img {
+  display: block;
+}
+.iconCheck {
+  margin-right: 4px;
+  // background-color: #eb3c59;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hoge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    color: #0000ff;
+  }
+}

@@ -1,0 +1,9 @@
+.hoge {
+  color: #666;
+  &__element {
+    font-size: 10px;
+  }
+  &--modifier {
+    font-weight: 700;
+  }
+}
