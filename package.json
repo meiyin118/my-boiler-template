@@ -1,10 +1,12 @@
 {
-  "name": "boiler template",
+  "name": "boiler-template",
   "version": "1.0.0",
   "description": "シンプルなボイラーテンプレート",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hoge": "echo 'hello!'",
+    "start": "npx gulp"
   },
   "keywords": [],
   "author": "h.odagiri",
