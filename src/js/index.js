@@ -1,7 +1,7 @@
 'use strict';
 {
-  const displayAlert = () => {
-    console.log('hoge');
-  };
-  displayAlert();
+    const displayAlert = () => {
+        console.log('hoge');
+    };
+    displayAlert();
 }
