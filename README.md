@@ -1,5 +1,6 @@
 # ボイラーテンプレート
 scssとejsを使える開発環境のボイラーテンプレート。
+- dart-sass対応
 - ホットリロード対応
 - 画像圧縮対応
 - JSのトランスパイル対応
@@ -21,6 +22,8 @@ npm run start
 ```
 # scssを使う
 npm i -D gulp-sass
+# lib-sassからdart-sassにするために必要
+npm i -D sass fibers
 # @importをまとめる
 npm i -D gulp-sass-glob
 # Autoprefix
@@ -50,9 +53,10 @@ npm i -D gulp-notify
 - autoprefixerを使用する時は、package.jsonにbrowserlistの記入が必要
 - gulp-ejsはあるバージョンからコンパイル後の拡張子が変換されなくなったのでgulp-renameと併用する
 - エラー時に強制終了しないために、plumberを導入。notifyのデスクトップ通知でエラー検知しやすくなる
-
+- dart-sassへの切り替えには、`sass`と`fibers`が必要
 
 ## 参考
 - https://ics.media/entry/3290/
 - https://qiita.com/tonkotsuboy_com/items/67d9fd4d054a45af9f34
 - https://yumegori.com/gulp4-setting20191025#chapter-14
+- https://labor.ewigleere.net/2020/11/09/scss_transfer_libsass_dartsass/

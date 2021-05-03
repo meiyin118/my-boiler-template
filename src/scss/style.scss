@@ -1,9 +1,14 @@
+@charset 'UTF-8';
+@use '_foundation/_vars' as vars;
+
+html {
+  font-size: 62.5%;
+}
 img {
   display: block;
 }
 .iconCheck {
   margin-right: 4px;
-  // background-color: #eb3c59;
 }
 .container {
   display: flex;
@@ -16,6 +21,7 @@ img {
   align-items: center;
   justify-content: center;
   &__text {
-    color: #0000ff;
+    color: vars.color(text);
+    font-size: vars.fontSize(normal);
   }
 }

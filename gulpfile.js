@@ -2,6 +2,7 @@
 const {src,dest,watch,lastRun,parallel} = require("gulp");
 // コンパイルするプラグインの読み込み
 const sass = require("gulp-sass"),
+      Fiber = require("fibers"),
       autoprefixer = require("gulp-autoprefixer"),
       glob = require("gulp-sass-glob"),
       ejs = require("gulp-ejs"),
@@ -13,6 +14,7 @@ const sass = require("gulp-sass"),
       pngquant = require("imagemin-pngquant"),
       mozjpeg = require("imagemin-mozjpeg"),
       babel = require("gulp-babel"); 
+      sass.compiler = require('sass');
 
 //読み込むパスと出力するパスを指定
 const srcPath = {
@@ -85,7 +87,7 @@ const compileSass = () =>
     })
   )
   .pipe(glob())
-  .pipe(sass({outputStyle:"expanded"})).on("error", sass.logError)
+  .pipe(sass({fiber:Fiber,outputStyle:"expanded"})).on("error", sass.logError)
   .pipe(autoprefixer({
     cascade: false
   }))
