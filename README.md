@@ -4,6 +4,14 @@ scssとejsを使える開発環境のボイラーテンプレート。
 - 画像圧縮対応
 - JSのトランスパイル対応
 
+## テンプレート使用方法
+```
+# 起動
+npx gulp
+もしくは
+npm run start
+```
+
 ## 今回やったこと
 - package.json生成（`npm init -y`）
 - 必要なパッケージのインストール
@@ -11,30 +19,30 @@ scssとejsを使える開発環境のボイラーテンプレート。
 
 ## 使用パッケージ
 ```
-// scssを使う
+# scssを使う
 npm i -D gulp-sass
-// @importをまとめる
+# @importをまとめる
 npm i -D gulp-sass-glob
-// Autoprefix
+# Autoprefix
 npm i -D autoprefixer
 
-// EJSを使う
+# EJSを使う
 npm i -D gulp-ejs
-// コンパイル後のEJSの拡張子を任意のものに変更する
+# コンパイル後のEJSの拡張子を任意のものに変更する
 npm i -D gulp-rename
 
-// JavaScriptのトランスパイル用
+# JavaScriptのトランスパイル用
 npm i -D gulp-babel @babel/core @babel/preset-env
 
-// 画像圧縮
+# 画像圧縮
 npm i -D gulp-imagemin imagemin-mozjpeg imagemin-pngquant
 
-// ブラウザのホットリロード
+# ブラウザのホットリロード
 npm i -D browser-sync
 
-// エラーによる強制終了防止
+# エラーによる強制終了防止
 npm i -D gulp-plumber
-// エラー時にデスクトップ通知
+# エラー時にデスクトップ通知
 npm i -D gulp-notify
 ```
 

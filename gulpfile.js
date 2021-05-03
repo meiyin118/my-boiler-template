@@ -67,6 +67,10 @@ const compileImg = () => {
     .pipe(plumber({ errorHandler: notify.onError("<%= error.message %>") }))
     .pipe(imagemin(imagesBase))
     .pipe(dest(srcPath.images.dist))
+    .pipe(notify({
+      title: 'imagemin',
+      message: 'image file compressed!'
+    }))  
     .pipe(browserSync.reload({ stream: true }));
 };
 
@@ -77,8 +81,7 @@ const compileSass = () =>
   src(srcPath.css.src)
   .pipe(
     plumber({
-      errorHandler: notify.onError("Error: <%= error.message %>"),
-      title: 'scss error'
+      errorHandler: notify.onError("Error: <%= error.message %>")
     })
   )
   .pipe(glob())
@@ -87,6 +90,10 @@ const compileSass = () =>
     cascade: false
   }))
   .pipe(dest(srcPath.css.dist))
+  .pipe(notify({
+    title: 'gulp-sass',
+    message: 'sass file compiled!'
+  }))
   .pipe(browserSync.reload({ stream: true }));
 
 /**
@@ -102,6 +109,10 @@ const compileEJS = () =>
   .pipe(ejs())
   .pipe(rename({ extname: '.html' }))
   .pipe(dest(srcPath.html.dist))
+  .pipe(notify({
+    title: 'gulp-ejs',
+    message: 'EJS file compiled!'
+  }))
   .pipe(browserSync.reload({ stream: true }));
 
 /**
@@ -117,6 +128,10 @@ const compileJS = () => {
         })
       )
       .pipe(dest(srcPath.js.dist))
+      .pipe(notify({
+        title: 'babel',
+        message: 'js file compiled!'
+      }))    
       .pipe(browserSync.reload({ stream: true }))
   );
 };
