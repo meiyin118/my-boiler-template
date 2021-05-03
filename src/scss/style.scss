@@ -1,27 +1,26 @@
-@charset 'UTF-8';
 @use '_foundation/_vars' as vars;
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 img {
-  display: block;
+    display: block;
 }
 .iconCheck {
-  margin-right: 4px;
+    margin-right: 4px;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .hoge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__text {
-    color: vars.color(text);
-    font-size: vars.fontSize(normal);
-  }
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    &__text {
+        color: vars.color(text);
+        font-size: vars.fontsize(normal);
+    }
 }
