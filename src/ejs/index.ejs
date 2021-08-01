@@ -8,6 +8,7 @@ _%>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boiler Template</title>
+  <link rel="stylesheet" href="css/destyle.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,8 +17,9 @@ _%>
       <img src="img/check.svg" width="16" height="16" class="iconCheck">
       <p class="hoge__text"><%= hoge %></p>
     </div>
-    <img src="img/dogs.jpg" width="400">
-    <img src="img/ma.png">
+    <% for(var i=0; i < 10; i++) { %>
+    <img src="img/dogs.jpg" width="400" lording="lazy" style="margin-bottom:10px;">
+    <% } %>
   </div>
   <script src="js/index.js"></script>
 </body>

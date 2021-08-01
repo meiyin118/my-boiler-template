@@ -1,15 +1,15 @@
 $fontSizeList: (
-  title: 2rem,
-  normal: 1.4rem
+    title: 2rem,
+    normal: 1.4rem,
 );
-@function fontSize($key) {
-  @return #{map-get($fontSizeList, $key)}
+@function fontsize($key) {
+    @return #{map-get($fontSizeList, $key)};
 }
 $colorList: (
-  text: #8d8d8d,
-  link: blue,
-  error: red,
-)!default;
+    text: #8d8d8d,
+    link: blue,
+    error: red,
+) !default;
 @function color($key) {
-  @return #{map-get($colorList, $key)}
+    @return #{map-get($colorList, $key)};
 }
